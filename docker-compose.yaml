@@ -1,0 +1,44 @@
+version: "3.3"
+
+services: 
+  db:
+    image: postgres
+    container_name: postgresql
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres!
+#    ports: 
+#      - 5432:5432
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data/
+
+  edt:
+    image: ghcr.io/linuxserver/code-server
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Fortaleza
+      - PASSWORD=salvador #optional
+#      - HASHED_PASSWORD= #optional
+      - SUDO_PASSWORD=egito #optional
+      - SUDO_PASSWORD_HASH= #optional
+#      - PROXY_DOMAIN=code-server.salvador.eti
+    volumes:
+      - ${PWD}/config:/config
+      - ${PWD}/:/home/app/web
+      - ${HOME}/.ssh:/home/app/.ssh
+    ports:
+      - 8445:8443
+    restart: unless-stopped
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+volumes:
+  postgres_data:

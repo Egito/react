@@ -1,0 +1,5 @@
+.config/
+config/
+.vscode/
+node_modules/
+.ssh/
