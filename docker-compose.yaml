@@ -1,17 +1,17 @@
 version: "3.3"
 
 services: 
-  db:
-    image: postgres
-    container_name: postgresql
-    environment: 
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres!
+#  db:
+#    image: postgres
+#    container_name: postgresql
+#    environment: 
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres!
 #    ports: 
 #      - 15432:5432
-    volumes: 
-      - postgres_data:/var/lib/postgresql/data/
-
+#    volumes: 
+#      - postgres_data:/var/lib/postgresql/data/
+#
   edt:
     image: ghcr.io/linuxserver/code-server
     container_name: code-server
@@ -30,6 +30,7 @@ services:
       - ${HOME}/.ssh:/home/app/.ssh
     ports:
       - 8445:8443
+      - 3030:3000
     restart: unless-stopped
 
   mongo:
@@ -44,5 +45,5 @@ services:
 
 
 volumes:
-  postgres_data:
+#  postgres_data:
   mongo_data:
