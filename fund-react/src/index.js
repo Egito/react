@@ -8,13 +8,13 @@ ReactDOM.render(
 <div>
   <Prim></Prim>
   <ComPar 
-    titulo="Testando"
-    subtitulo="novo teste"
+    titulo="Joao da Silva"
+    subtitulo="Prova de peixada cearense"
     nota={15}
     />
   <ComPar 
-    titulo="Testando2"
-    subtitulo="novo teste3"
+    titulo="Maria de Souza"
+    subtitulo="Prova de Galinha a cabidela"
     nota={5}
     />
 </div>,

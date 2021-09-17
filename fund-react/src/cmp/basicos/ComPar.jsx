@@ -6,8 +6,10 @@ export default function ComPar(p) {
         <div>
             <h2>{ p.titulo }</h2>
             <p>{ p.subtitulo }</p>
-            Sua culinaria tem nota
-            strong
+            Sua culinaria obteve nota
+            <strong> { p.nota } </strong> pelos pesquisadores<br />
+            E na nossa visao
+            <strong> { status }</strong>
         </div>
     )
 }
