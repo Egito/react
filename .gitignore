@@ -3,3 +3,4 @@ config/
 .vscode/
 node_modules/
 .ssh/
+package-lock.json

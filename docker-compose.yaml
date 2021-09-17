@@ -31,10 +31,11 @@ services:
       - ${HOME}/.ssh:/home/app/.ssh
     ports:
       - 8445:8443
-      - 3030:3000
+      - 3000:3000
 
   mongo:
-    image: arm64v8/mongo:4.4.8
+#    image: arm64v8/mongo:4.4.8
+    image: mongo
     container_name: mongo
     restart: always
     environment:
